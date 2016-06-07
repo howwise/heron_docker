@@ -2,13 +2,15 @@ FROM centos:centos7
 
 
 
-ADD docker_files/build-artifacts.sh /usr/bin/build-artifacts.sh
-ADD docker_files/cleanup-dockers.sh /usr/bin/compile-docker.sh
-ADD docker_files/compile-platform.sh /usr/bin/compile-platform.sh
-ADD docker_files/Dockerfile.centos7 /usr/bin/Dockerfile.centos7
+ADD ./build-artifacts.sh /usr/bin/build-artifacts.sh
+ADD ./compile-docker /usr/bin/compile-docker
+ADD ./cleanup-dockers.sh /usr/bin/compile-docker.sh
+ADD ./compile-platform.sh /usr/bin/compile-platform.sh
+ADD ./Dockerfile.centos7 /usr/bin/Dockerfile.centos7
 RUN \
     chmod +x /usr/bin/build-artifacts.sh && \
     chmod +x /usr/bin/compile-docker.sh && \
+    chmod +x /usr/bin/cleanup-dockers && \
     chmod +x /usr/bin/compile-platform.sh && \
     bash /usr/bin/build-artifacts.sh centos7 0.14.0 /dockerout/centos7
 
