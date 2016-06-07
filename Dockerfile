@@ -4,7 +4,7 @@ FROM centos:centos7
 
 ADD ./build-artifacts.sh /usr/bin/build-artifacts.sh
 ADD ./compile-docker.sh /usr/bin/compile-docker.sh
-ADD ./cleanup-dockers.sh /usr/bin/compile-docker.sh
+ADD ./cleanup-dockers.sh /usr/bin/cleanup-dockers.sh.sh
 ADD ./compile-platform.sh /usr/bin/compile-platform.sh
 ADD ./Dockerfile.centos7 /usr/bin/Dockerfile.centos7
 RUN \
