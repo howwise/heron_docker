@@ -11,8 +11,9 @@ RUN \
     chmod +x /usr/bin/build-artifacts.sh && \
     chmod +x /usr/bin/compile-docker.sh && \
     chmod +x /usr/bin/cleanup-dockers && \
-    chmod +x /usr/bin/compile-platform.sh && \
-    bash /usr/bin/build-artifacts.sh centos7 0.14.0 /dockerout/centos7
+    chmod +x /usr/bin/compile-platform.sh
+RUN cd /usr/bin/
+RUN bash ./build-artifacts.sh centos7 0.14.0 /dockerout/centos7
 
 
 
