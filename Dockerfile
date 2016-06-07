@@ -1,7 +1,27 @@
 FROM centos:centos7
 
-# This is passed to the heron build command via the --config flag
-#ENV TARGET_PLATFORM centos
+
+
+ADD docker_files/build-artifacts.sh /usr/bin/build-artifacts.sh
+ADD docker_files/cleanup-dockers.sh /usr/bin/compile-docker.sh
+ADD docker_files/compile-platform.sh /usr/bin/compile-platform.sh
+ADD docker_files/Dockerfile.centos7 /usr/bin/Dockerfile.centos7
+RUN \
+    chmod +x /usr/bin/build-artifacts.sh && \
+    chmod +x /usr/bin/compile-docker.sh && \
+    chmod +x /usr/bin/compile-platform.sh && \
+    bash /usr/bin/build-artifacts.sh centos7 0.14.0 /dockerout/centos7
+
+
+
+
+
+
+
+
+
+
+
 
 ENV JAVA_VERSION 8u31
 ENV BUILD_VERSION b13
@@ -43,5 +63,5 @@ RUN wget -O /tmp/bazel.sh https://github.com/bazelbuild/bazel/releases/download/
       && chmod +x /tmp/bazel.sh \
       && /tmp/bazel.sh
 
-#ADD bazelrc /root/.bazelrc
+ADD bazelrc /root/.bazelrc
 ADD compile-platform.sh /compile-platform.sh
