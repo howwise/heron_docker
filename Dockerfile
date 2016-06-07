@@ -14,4 +14,4 @@ RUN \
     chmod +x /usr/bin/compile-platform.sh
 #RUN cd /usr/bin/
 #RUN bash ./build-artifacts.sh centos7 0.14.0 /dockerout/centos7
-#RUN bash /usr/bin/build-artifacts.sh centos7 0.14.0 /dockerout/centos7
+RUN bash /usr/bin/build-artifacts.sh centos7 0.14.0 /dockerout/centos7
