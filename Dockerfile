@@ -1,7 +1,7 @@
 FROM centos:centos7
 
 # This is passed to the heron build command via the --config flag
-ENV TARGET_PLATFORM centos
+#ENV TARGET_PLATFORM centos
 
 ENV JAVA_VERSION 8u31
 ENV BUILD_VERSION b13
