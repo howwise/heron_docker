@@ -43,5 +43,5 @@ RUN wget -O /tmp/bazel.sh https://github.com/bazelbuild/bazel/releases/download/
       && chmod +x /tmp/bazel.sh \
       && /tmp/bazel.sh
 
-ADD bazelrc /root/.bazelrc
+#ADD bazelrc /root/.bazelrc
 ADD compile-platform.sh /compile-platform.sh
